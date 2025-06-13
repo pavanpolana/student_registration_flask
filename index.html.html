@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <body>
+            <h2>added student </h2>
+            <form method="post" action="/add">
+                name:<input type="text" name="name"><br>
+                email:<input type="email" name="email"><br>
+                course:<input type="text" name="course"><br>
+                <button type="submit">add</button>
+            </form>
+            
+            <table border="1">
+                <tr>
+                <th>name</th>
+                <th>email</th>
+                <th>course</th>
+                <th>actions</th>
+              </tr>
+              {% for s in students %}
+              <tr>
+                <td>{{s.name}}</td>
+                <td>{{s.email}}</td>
+                    <td>{{s.course}}</td>
+                    <td>
+                         <a href="/edit/{{ s.id }}">edit</a><br>
+                       <a href="/delete1/{{ s.id }}"> Delete</a>
+
+                    </td>
+              </tr>
+              {% endfor %}
+            </table>
+            
+        </head>
+        </body>
+
+</html>
